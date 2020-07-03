@@ -41,7 +41,7 @@ def predict():
     features=[]
     
         
-    input_features = [float(x) for x in request.form.values()]
+    input_features = [int(x) for x in request.form.values()]
     
     features.append(input_features)
     
