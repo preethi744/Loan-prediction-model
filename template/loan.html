@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+
+  <style>
+    /* CSS code for button */
+    body {
+      background-image: url('approve.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    /* CSS code for button */
+    .button_css {
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 20px;
+    border: 4px solid #494949 !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    }
+    
+    .button_css:hover {
+    color: #ffffff !important;
+    background: #f6b93b;
+    border-color: #f6b93b !important;
+    transition: all 0.4s ease 0s;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  
+ <div class="login">
+	
+    <!-- Get input for predict the loan -->
+    <center>
+    <form action="{{ url_for('predict')}}"method="post">
+        <h1>"Enter the value of loan features"</h1>
+        
+  	<select name="Gender" placeholder=" Choose Gender" style="padding-left: 5%;width:18%;height:1.9rem;">
+                <option value="">Choose Gender</option>
+                <option value="0">Male</option>
+                <option value="1">Female</option>
+            </select>
+	<select name="Married" placeholder=" Choose Maritial Status" style="padding-left: 5%;width:18%;height:1.9rem;">
+                <option value="">Choose Maritial Status/option>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+	<select name="Dependents" placeholder=" Choose Dependents" style="padding-left: 5%;width:18%;height:1.9rem;">
+                <option value="">Choose Dependents</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+	</select>
+	<br>
+	<select name="Education" placeholder=" Choose Education" style="padding-left: 5%;width:18%;height:1.9rem;">
+                <option value="">Choose Educaion</option>
+                <option value="0">Graduate</option>
+                <option value="1">not Graduate</option>
+	</select>
+	<select name="Self_Employed" placeholder=" Choose Self Employment" style="padding-left: 5%;width:18%;height:1.9rem;">
+                <option value="">Choose Employment</option>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+	</select>
+	<select name="Property_Area" placeholder=" choose property area" style="padding-left: 5%;width:18%;height:1.9rem;">
+                <option value="">Choose Property Area</option>
+                <option value="0">Semiurban</option>
+                <option value="1">Urban</option>
+		<option value="2">Rural</option>
+	</select>
+	
+	<br>
+
+
+	<input type="text" placeholder="Applicant Income" name="ApplicantIncome" required />
+	<input type="text" placeholder="Coapplicant Income" name="CoapplicantIncome" required />
+	<input type="text" placeholder="Loan Amount" name="LoanAmount" required />
+	<input type="text" placeholder="Loan-Amount-Term" name="Loan-Amount-Term" required />
+	<input type="text" placeholder="Credit_History" name="Credit_History" required />
+	
+        <br>
+       	
+	<div class="button_cont" align="center"><a class="button_css"  target="_blank" rel="nofollow noopener">
+            <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict Loan</strong></button></a>
+        </div> 
+
+    </form>
+    </center>
+   
+   <!-- Show predicted output using ML model --> 
+   <div>
+       <center>
+   <h1>{{ prediction_text }}</h1>
+       </center>
+   </div>
+
+ </div>
+
+</body>
+</html>
