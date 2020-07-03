@@ -45,7 +45,6 @@ def predict():
     
     features.append(input_features)
     
-    print(features)
     
                       
     prediction = model.predict(features)
