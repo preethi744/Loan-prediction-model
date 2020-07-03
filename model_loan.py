@@ -3,20 +3,6 @@
 
 # In[1]:
 
-#Introcution
-#This dataset is for loan prediction of an applicant.It has features like Loan_ID(ID of the applicant's loan),
-#Gender(gender of applicant),
-#Dependents(dependents of applicant),
-#Education,(applicant is a graduate or not)
-#Self_employment(it says self employment like business or not),
-#Married(Maritial Status),
-#ApplicantIncome(Income of the applicant),
-#CoapplicantIncome(Income of co-applicant),
-#LoanAmount(Loan amount requested),
-#Loan-amount-term(term of loan amount),
-#credit-history(history of applicant credit)
-#Loan_Status(Status of loan that says loan approved or not)
-
 
 #importing required libraries
 import pandas as pd
@@ -336,8 +322,6 @@ y_pred3=model3.predict(xtest)
 A3=accuracy_score(ytest,y_pred3)*100
 A3
 
-#SUMMARY
-#I analyzed the data with some steps like data visualization.Later,I preprocessed the data using labelencoding categorical features and mean of numerical and handled the missing values.I trained the model with 3 different models and finally selected the more accuracy one i.e.,Logistic regression.Atlast,I dumped the model into a pkl file.
 # In[55]:
 
 
@@ -348,10 +332,5 @@ import joblib
 
 
 joblib.dump(model1,open('loan_model.pkl','wb'))
-
-
-# In[ ]:
-
-
 
 
